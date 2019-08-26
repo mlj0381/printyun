@@ -44,9 +44,9 @@ docker container run -d -p 8001:8001 --name printyun pringyun
 /login/login 登录  
 
 ## 部分截图
-![](http://pic.printyun.cn/2.png)
-![](http://pic.printyun.cn/1.png)
-![](http://pic.printyun.cn/3.png)
+![](http://pic.printyun.cn/printyun1.png)
+![](http://pic.printyun.cn/printyun2.png)
+![](http://pic.printyun.cn/printyun3.png)
 
 
 
