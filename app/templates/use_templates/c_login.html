@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset=UTF-8
+    "utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=0">
+    <title>云打印-同讯科技</title>
+    <meta name="keywords" content="同讯科技"/>
+    <meta name="description" content="同讯科技"/>
+    <script src="../../static/c_assets/js/jquery-3.2.1.min.js" language="javascript"></script>
+    <script src="../../static/c_assets/js/trans.js" language="javascript "></script>
+    <link href="../../static/c_assets/css/cssstyle.css " rel="stylesheet " type="text/css ">
+</head>
+
+<body>
+
+<body class="loginPage">
+<header>
+    <div class="Top">
+        <div class="w1200">
+            <div class="logo">
+                <a href="{{ url_for('admin.inded_select') }}"><img src="../../static/c_assets/images/logo.png" width="186"
+                                                                alt="云打印-同讯科技"></a>
+            </div>
+            <!--nav class="nav">
+            <a href="index.htm" tppabs="http://www.eyprint.com/"><span>首页</span></a>
+            <a href="index.php-c=member&amp;a=login.htm" tppabs="http://www.eyprint.com/index.php?c=nearbyPrint&amp;a=main"><span>附近的打印机</span></a>
+            <a href="index.php-c=member&amp;a=login.htm" tppabs="http://www.eyprint.com/index.php?c=member&amp;a=main"><span>用户中心</span></a>
+            <a href="index.php-c=member&amp;a=login.htm" tppabs="http://www.eyprint.com/index.php?c=api&amp;a=main"><span>开发者中心</span></a>
+            <a href="index.php-c=help&amp;a=main.htm" tppabs="http://www.eyprint.com/index.php?c=help&amp;a=main"><span>帮助中心</span></a>
+            </nav!-->
+            <div class="userBtn">
+                <a href="{{ url_for('login.back_login') }}" class="icon_login">用户登录</a>
+                <a href="{{ url_for('login.register') }}" class="icon_reg">免费注册</a>
+                <script src="##"></script>
+            </div>
+
+            <div class="menu"></div>
+
+        </div>
+    </div>
+</header>
+<section class="login_box">
+
+    <div class="loginformBox">
+        <form action="{{ url_for('login.back_login') }}" method="post">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <ul class=flashes>
+                        {% for message in messages %}
+                            <li style="text-align: center">{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
+            {{ form.hidden_tag() }}
+
+            <div class="formRow">
+                {{ form.tel(placeholder="登录名（手机号码）") }}
+            </div>
+
+            <div class="formRow">
+                {{ form.password(placeholder="密码") }}
+            </div>
+
+            {#            <div class="formRow">#}
+            记住账号？{{ form.remember }}
+            {#            </div>#}
+
+            <div class="formRow">
+                {{ form.submit }}
+            </div>
+
+            <div class="formRow">
+
+                <div class="left"><a href="{{ url_for('login.findpassword') }}">忘记密码？</a></div>
+
+                <div class="right">没有账号？<a href="{{ url_for('login.register') }}">立即注册</a></div>
+
+            </div>
+
+        </form>
+    </div>
+
+
+    <div class="login_bg">
+        <div class="login_bg1" style="top: 0px; left: 0px;"></div>
+        <div class="login_bg2" style="top: 0.670206px; left: -4.61469px;"></div>
+        <div class="login_bg3" style="top: 1.34041px; left: -9.22938px;"></div>
+        <div class="login_bg4" style="top: 2.01062px; left: -13.8441px;"></div>
+        <div class="login_bg5" style="top: 2.68082px; left: -18.4588px;"></div>
+        <div class="login_bg6" style="top: 3.35103px; left: -23.0734px;"></div>
+    </div>
+
+    <div class="bl"></div>
+</section>
+
+
+<script src="../../static/c_assets/js/menu.js"></script>
+
+
+</body>
+
+</html>

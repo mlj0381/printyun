@@ -1,0 +1,239 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>订单查询</title>
+    <link rel="stylesheet" type="text/css" href="../../static/layui_admin/css/search.css"/>
+
+    <link rel="stylesheet" type="text/css" href="../../static/layui/css/layui.css"/>
+    <script type="text/javascript" src="../../static/layui/jquery-1.9.1.min.js"></script>
+
+</head>
+
+<body style="margin-left:5%; padding:1%;">
+<br><br><br>
+
+<div style="width: 90%">
+    <fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+        <legend>订单查询</legend>
+    </fieldset>
+    <div class="layui-row" style="margin-right: 10px">
+        <div class="layui-col-md3" style="margin-right: 10px">
+            <line class="layui-tree-line layui-text">日期</line>
+            <input id="date_time" type="text" class="layui-input" id="order-time" placeholder="日期搜索">
+        </div>
+        {% if current_user.Role == 'admin' %}
+            <div class="layui-col-md3" style="margin-right: 10px">
+                <line class="layui-tree-line layui-text">手机号</line>
+                <input id="tel_num" type="text" class="layui-input" placeholder="手机号搜索">
+            </div>
+        {% endif %}
+        <button id="submit" class="layui-btn" style="margin-top: 22px">搜索</button>
+    </div>
+    <!-- 表格 -->
+    <table class="layui-hide" id="order-date"></table>
+</div>
+<div id="demo1"></div>
+
+<script type="text/javascript" src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+<script type="text/javascript" src="../../static/layui/layui.js"></script>
+{% if current_user.Role == 'admin' %}
+    <script>
+        layui.use('table', function () {
+            var table = layui.table.render({
+                elem: '#order-date',
+                url: "../jsons/date_times",
+                where: {
+                    "date_time": '',
+                    "tel_num": '',
+                },
+                method: 'post',
+                loading: true,
+                toolbar: '<div>全部订单</div>',
+                title: '订单详情',
+                page: true,
+                defaultToolbar: ['print', 'filter', 'exports'],
+                cols: [
+                    [
+                        {
+                            field: 'Print_File_Dir',
+                            title: '文件名',
+                            fixed: 'left',
+                            unresize: true,
+                            sort: true,
+                        },
+                        {
+                            field: 'Print_Copies',
+                            title: '份数',
+                            sort: true,
+                        },
+                        {
+                            field: 'Print_Colour',
+                            title: '单彩',
+                            sort: true,
+                        },
+                        {
+                            field: 'Print_size',
+                            title: '方向',
+                            sort: true,
+                        },
+                        {
+                            field: 'Print_way',
+                            title: '方式',
+                            sort: true,
+                        }, {
+                        field: 'Born_Date_Day',
+                        title: '打印日期',
+                        sort: true
+                    },
+                        {
+                            field: 'Print_Money',
+                            title: '价格',
+                            sort: true,
+                        },
+                        {
+                            field: 'Print_Status',
+                            title: '状态',
+                            sort: true,
+                        },
+                        {
+                            field: 'Tel_Num',
+                            title: '手机号',
+                            sort: true,
+                        },
+                        {
+                            field: 'Trade_Number',
+                            title: '订单号',
+                            sort: true,
+                        }
+                    ]
+
+                ],
+
+            });
+            $(function () {
+                $('#submit').click(function () {
+                    table.reload({
+                        where: {
+                            "date_time": $('input#date_time').val(),
+                            "tel_num": $('input#tel_num').val(),
+                        },
+                    })
+                })
+            })
+        });
+
+        layui.use('laydate', function () {
+            var laydate = layui.laydate;
+
+            //执行一个laydate实例
+            laydate.render({
+                elem: '#date_time' //指定元素
+            });
+        });
+    </script>
+
+{% endif %}
+{% if current_user.Role == 'guest' %}
+    <script>
+        $(function () {
+            $('#submit').click(function () {
+
+            })
+        });
+        layui.use('table', function () {
+            var table = layui.table.render({
+                elem: '#order-date',
+                url: "../jsons/date_times",
+                where: {
+                    "date_time": '',
+                    "tel_num": '',
+                },
+                method: 'post',
+                loading: true,
+                toolbar: '<div>全部订单</div>',
+                title: '订单详情',
+                page: true,
+                defaultToolbar: ['print', 'filter', 'exports'],
+                cols: [
+                    [
+                        {
+                            field: 'File_Name',
+                            title: '文件名',
+                            fixed: 'left',
+                            unresize: true,
+                            sort: true,
+                        },
+                        {
+                            field: 'Print_Copies',
+                            title: '份数',
+                            sort: true,
+                        },
+                        {
+                            field: 'Print_Colour',
+                            title: '单彩',
+                            sort: true,
+                        },
+                        {
+                            field: 'Print_size',
+                            title: '方向',
+                            sort: true,
+                        },
+                        {
+                            field: 'Print_way',
+                            title: '方式',
+                            sort: true,
+                        }, {
+                        field: 'Born_Date_Day',
+                        title: '打印日期',
+                        sort: true
+                    },
+                        {
+                            field: 'Print_Money',
+                            title: '价格',
+                            sort: true,
+                        },
+                        {
+                            field: 'Print_Status',
+                            title: '状态',
+                            sort: true,
+                        },
+                        {
+                            field: 'Tel_Num',
+                            title: '手机号',
+                            sort: true,
+                        },
+                        {
+                            field: 'Trade_Number',
+                            title: '订单号',
+                            sort: true,
+                        }
+                    ]
+
+                ],
+
+            });
+            $(function () {
+                $('#submit').click(function () {
+                    table.reload({
+                        where: {
+                            "date_time": $('input#date_time').val(),
+                            "tel_num": '',
+                        },
+                    })
+                })
+            })
+        });
+        layui.use('laydate', function () {
+            var laydate = layui.laydate;
+
+            //执行一个laydate实例
+            laydate.render({
+                elem: '#date_time' //指定元素
+            });
+        });
+    </script>
+{% endif %}
+</body>
+</html>

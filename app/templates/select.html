@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var UserName = '{{ g.current_userphone }}'            // 后端数据
+    var time_now = '{{ now }}'
+    var error = '{{ error }}'
+
+    if (error === '1') {
+        $(function () {
+            $.alert("此文件不能被系统转换处理，请重试", "警告")
+        });
+    }
+</script>
+<!--<form action="{{url_for('login.register')}}" method="post" enctype='multipart/form-data'>-->
+<form method="post" enctype='multipart/form-data'>
+    {{ form.hidden_tag() }}
+    {{ form.print_file.label }}
+    {{ form.print_file }}
+    {% for message in form.print_file.errors %}
+        <small>{{ message }}</small>
+    {% endfor %}
+    <br>
+    {{ form.print_place.label }}
+    {{ form.print_place }}
+    {% for message in form.print_place.errors %}
+        <small>{{ message }}</small>
+    {% endfor %}
+    <br>
+    {{ form.print_time.label }}
+    {{ form.print_time(type="date") }}
+    {% for message in form.print_time.errors %}
+        <small>{{ message }}</small>
+    {% endfor %}
+    <br>
+    {{ form.print_copies.label }}
+    {{ form.print_copies }}
+    {% for message in form.print_copies.errors %}
+        <small>{{ message }}</small>
+    {% endfor %}
+    <br>
+    {{ form.print_type.label }}
+    {{ form.print_type }}
+    {% for message in form.print_type.errors %}
+        <small>{{ message }}</small>
+    {% endfor %}
+    <br>
+    {{ form.print_size.label }}
+    {{ form.print_size }}
+    {% for message in form.print_size.errors %}
+        <small>{{ message }}</small>
+    {% endfor %}
+    <br>
+    {{ form.print_way.label }}
+    {{ form.print_way }}
+    {% for message in form.print_way.errors %}
+        <small>{{ message }}</small>
+    {% endfor %}
+    <br>
+    {{ form.print_color.label }}
+    {{ form.print_color }}
+    {% for message in form.print_color.errors %}
+        <small>{{ message }}</small>
+    {% endfor %}
+{#    <br>#}
+{#    {{ form.page_start.label }}#}
+{#    {{ form.page_start }}#}
+{#    {% for message in form.page_start.errors %}#}
+{#        <small>{{ message }}</small>#}
+{#    {% endfor %}#}
+{#    <br>#}
+{#    {{ form.page_end.label }}#}
+{#    {{ form.page_end }}#}
+{#    {% for message in form.page_end.errors %}#}
+{#        <small>{{ message }}</small>#}
+{#    {% endfor %}#}
+    <br>
+    {{ form.submit }}
+</form>
+</body>
+</html>

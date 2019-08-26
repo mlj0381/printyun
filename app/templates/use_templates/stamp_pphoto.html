@@ -1,0 +1,204 @@
+
+	
+<!DOCTYPE html>
+<html>
+<head>
+<title>普通照片</title>
+
+	
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">  
+<meta name="description" content=" 云打印平台">
+<meta name="keywords" content="云打印">
+<meta name="viewport" content="width=1200"/>
+<!-- 运营时去掉 -->
+<!--<META HTTP-EQUIV="Pragma" CONTENT="no-cache"> 
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache"> 
+ <META HTTP-EQUIV="Expires" CONTENT="0"> -->
+<link href="toNoLogin.action.htm"   
+	mce_href="/favicon.ico" rel="bookmark" type="image/x-icon" /> 
+<link href="toNoLogin.action.htm"   
+	mce_href="/favicon.ico" rel="icon" type="image/x-icon" /> 
+<link href="toNoLogin.action.htm"   
+	mce_href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+<link href="../../static/stamp_static/js/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="../../static/stamp_static/js/poshytip-1.2/tip-yellow/tip-yellow.min.css"
+	 rel="stylesheet">
+<link href="../../static/stamp_static/js/poshytip-1.2/tip-green/tip-green.min.css"
+	 rel="stylesheet">
+
+<script type="text/javascript"
+	src="../../static/stamp_static/js/jquery/jquery-1.8.3.min.js"  ></script>
+
+<script src="../../static/stamp_static/js/poshytip-1.2/jquery.poshytip.min.js"  ></script>
+<script src="../../static/stamp_static/js/JSON-min.js"  ></script>
+<script src="../../static/stamp_static/js/jquery.base64-min.js"  ></script>
+<script src="../../static/stamp_static/js/base64-min.js"  ></script>
+<script src="../../static/stamp_static/js/jquery.cookie-min.js"  ></script>
+
+<link href="../../static/stamp_static/css/common-min.css-1482794643345.css" rel='stylesheet' type='text/css'>
+<script src="../../static/stamp_static/js/common-min.js-1482794643345"  ></script>
+<script type="text/javascript">
+ var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+	document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F932fa76b807e99f4bdae87017d39afc6' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<!--[if !IE]><!-->
+<script src="../../static/stamp_static/js/jQuery-File-Upload/vendor/jquery.ui.widget.js"  ></script>
+<script src="../../static/stamp_static/js/jQuery-File-Upload/jquery.iframe-transport.js"  ></script>
+<script src="../../static/stamp_static/js/jQuery-File-Upload/jquery.fileupload.js"  ></script>
+<!--<![endif]-->
+<!--[if gte IE 10>
+<script src="../static/stamp_static/js/jQuery-File-Upload/vendor/jquery.ui.widget.js"  ></script>
+<script src="../static/stamp_static/js/jQuery-File-Upload/jquery.iframe-transport.js"  ></script>
+<script src="../static/stamp_static/js/jQuery-File-Upload/jquery.fileupload.js"  ></script>
+<![endif]-->
+<!--[if lt IE 10]>
+<link href="../static/stamp_static/js/uploadify/uploadify.css"   rel="stylesheet" type="text/css" />
+<script src="../static/stamp_static/js/uploadify/jquery.uploadify.js"   type="text/javascript"></script>
+<![endif]-->
+<!-- 裁剪图片开始 -->
+<link href="../../static/stamp_static/js/jcrop/css/jquery.Jcrop.min.css" rel="stylesheet" type="text/css" />
+<!-- 裁剪图片结束 -->
+<link href="../../static/stamp_static/css/print/commonPhoto-min.css-1482794643345.css" rel='stylesheet' type='text/css'>
+</head>
+<body>
+	
+
+
+<link href="../../static/stamp_static/css/menu-min.css-1482773700034.css" rel='stylesheet' type='text/css'>
+
+<div class="vy_header" id="head">
+ 	<div class="container">
+         <div class="vy_logo">
+			<a href="/index"  >
+			<img src="../../static/stamp_static/images1/logo.png"
+				width="50%" height="50%" alt="logo"/></a>				
+		 </div>
+	     <div class="vy_menu clearfix">
+			<ul>
+				<li class="homePage" onclick="location='/index'/*tpa=http://www.vyin.com/public/toIndex.action*/">
+					<a href="javascript:;">首页</a></li>			
+				 
+				 
+                <li class="userGuide" onclick="location='/user'/*tpa=http://www.vyin.com/public/toUserGuide.action*/">
+                <a href="javascript:;">用户指南</a></li>
+                <li class="throughWeChat" onclick="location='/vx'/*tpa=http://www.vyin.com/public/toThroughWeChat.action*/">
+                <a href="javascript:;">穿越到微信</a></li>
+			</ul>
+		</div>
+		 
+	</div>
+</div>
+ 	
+<script src="../../static/stamp_static/js/menu-min.js-1482773700034"  ></script>
+
+	<div class="vy_service" id="vy_service">
+		<div class="container">
+		<p class="service_title">照片打印</p>
+		<table class="vy_table">
+			<tbody id="tbodyContent" class="tbodyContent">
+				<tr class="first_tr">
+					<td>名称</td>
+					<td>上传结果</td>
+					<td>文件</td>
+					<td>类型</td>
+					<td>份数</td>
+					<td>单价/元</td>
+					<td>操作</td>			
+				</tr>
+				<tr id="def_content_tr" class="def_content_tr">
+					<td colspan="7"><img src="../../static/stamp_static/images1/def_photo.png"  />
+					<p>主人还没有图片，赶快去添加吧</p></td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="func_region clearfix">
+			<div class="text_prompt">支持以下照片格式: jpg，jpeg，bmp<br/>为保证打印效果，可上传完进行手动裁剪</div>
+			<div class="btn_group">
+				<div id="add_btn" class="add_btn">添加</div>
+	       		<div id="uploadifyDiv" style="display: none;">
+	       			<input type="file" name="file" id="uploadify" multiple="multiple"/>
+	       		</div>				
+				<div id="submit_btn" class="submit_btn">提交</div>
+			</div>
+		</div>
+		</div>
+	</div>
+	
+
+<link href="../../static/stamp_static/css/footer-min.css-1554366916014.css" rel="stylesheet"/>
+<div class="vy_footer" id="footer">
+	<div class="container">
+		<div class="">
+			<dl>
+				<dt>快速入口</dt>
+				<dd><a href="/text"  >
+					文档打印</a></dd>
+				<dd><a href="/pphoto"  >
+					照片打印</a></dd>
+				<dd><a href="/zphoto"  >
+					证件照打印</a></dd>
+				<dd><a href="/sphoto"  >
+					身份证照打印</a></dd>
+			</dl>
+		</div>
+		<span class="interval_line"></span>	
+		 
+		<span class="interval_line"></span>		
+		 
+		<span class="interval_line"></span>			
+		<div>
+			<dl>
+				<dt>官方微信</dt>
+				<dd><a class="weChat_subscription" href="javascript:;">微信订阅号<span class="subscription_tips"><i></i><img style="width:138px;height:138px;"
+                                                                                                                        src="../../static/stamp_static/images1/weChat_pub.jpg" alt="微信订阅号"></span></a></dd>
+				<dd><a class="weChat_public" href="javascript:;">微信公众号<span class="public_tips"><i></i><img style="width:138px;height:138px;"
+                                                                                                            src="../../static/stamp_static/images1/weChat_pub.jpg" alt="微信公众号"></span></a></dd>
+			</dl>
+		</div>
+		<span class="interval_line"></span>			
+		<div class="last_div">
+			<p class="phone"> 535027650</p>
+			<p>周一至周六 9:00-23:00</p>
+			<div onclick="javascript:location='/service'/*tpa=http://www.vyin.com/public/toContactService.action*/">在线客服
+			</div>
+		</div>					
+	</div>
+</div>
+<!--/start-copyright-section-->
+	<div class="vy_copyright" id="copyright">
+		 
+	</div>
+<!--//end-copyright-section-->	
+	<div id="MyDiv" class="white_content" style="height: 550px;width: 700px;">
+		<div class="div_closeIcon">
+			<span onclick="closeWindow()">
+				<img alt="关闭" src="../static/images/close_icon.png"  /></span>
+		</div>
+		<div id="div_content">
+			<div id="div_title" class="div_title">上传照片</div>
+			<div id="div_body" align="center">
+			
+			</div>
+			<form id="form" name="form">
+				<input type="hidden" name="x" id="x"> <input type="hidden"
+					name="y" id="y"> <input type="hidden" name="w" id="w">
+				<input type="hidden" name="h" id="h"> <input type="hidden"
+					id="resWidth" name="resWidth"> <input type="hidden"
+					id="resHeight" name="resHeight"> <input type="hidden"
+					id="imWidth"> <input type="hidden" id="imHeight">
+				<input type="hidden" id="horOrPer" name="horOrPer"/>
+				<input type="hidden" id=str_img name="str_img"/>
+				<input type="hidden" name="cutFileName" id="cutFileName">
+			</form>				
+		</div>
+	</div>
+<script src="../../static/stamp_static/js/jcrop/js/jquery.Jcrop.min.js"  ></script>
+<script src="../../static/stamp_static/js/script-min.js-1482794643345"  ></script>
+<script src="../../static/stamp_static/js/print/upload-min.js-1482794643345"  ></script>
+<script src="../../static/stamp_static/js/print/commonPhoto-min.js-1482794643345"  ></script>
+</body>
+</html>

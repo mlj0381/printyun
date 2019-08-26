@@ -1,0 +1,230 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset=UTF-8
+    "utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=0">
+    <title>云打印-同讯科技</title>
+    <meta name="keywords" content="同讯科技"/>
+    <meta name="description" content="同讯科技"/>
+    <script src="../../static/c_assets/js/jquery-3.2.1.min.js" language="javascript"></script>
+    <script src="../../static/c_assets/js/trans.js" language="javascript "></script>
+    <link href="../../static/c_assets/css/cssstyle.css " rel="stylesheet " type="text/css ">
+</head>
+
+
+<body class="loginPage">
+<header>
+    <div class="Top">
+        <div class="w1200">
+            <div class="logo">
+                <a href="{{ url_for('admin.inded_select') }}"><img src="../../static/c_assets/images/logo.png" width="186"
+                                                                alt="云打印-同讯科技"></a>
+            </div>
+            <!--nav class="nav">
+            <a href="index.htm" tppabs="http://www.eyprint.com/"><span>首页</span></a>
+            <a href="index.php-c=member&amp;a=login.htm" tppabs="http://www.eyprint.com/index.php?c=nearbyPrint&amp;a=main"><span>附近的打印机</span></a>
+            <a href="index.php-c=member&amp;a=login.htm" tppabs="http://www.eyprint.com/index.php?c=member&amp;a=main"><span>用户中心</span></a>
+            <a href="index.php-c=member&amp;a=login.htm" tppabs="http://www.eyprint.com/index.php?c=api&amp;a=main"><span>开发者中心</span></a>
+            <a href="index.php-c=help&amp;a=main.htm" tppabs="http://www.eyprint.com/index.php?c=help&amp;a=main"><span>帮助中心</span></a>
+            </nav!-->
+            <div class="userBtn">
+                <a href="{{ url_for('login.back_login') }}" class="icon_login">用户登录</a>
+                <script src="##"></script>
+            </div>
+
+            <div class="menu"></div>
+
+        </div>
+    </div>
+    <header>
+        <section class="box reg">
+            <div class="w1200">
+
+                <form action="{{ url_for('login.register') }}" method="post" class="regForm">
+                    <h3>欢迎注册云打印账号</h3>
+
+                    <div class="formRow">
+                        {{ form.tel(id='phone',placeholder="您的手机号码") }}
+                        {% for message in form.tel.errors %}
+                            <small>{{ message }}</small>
+                        {% endfor %}
+                    </div>
+
+                    <div class="formRow">
+                        {{ form.v_code(placeholder="验证码") }}
+                        <input type="button" id="getCode" onclick="send_message()" value="获取验证码"/>
+                        {% for message in form.v_code.errors %}
+                            <small>{{ message }}</small>
+                        {% endfor %}
+                    </div>
+
+                    <div class="formRow">
+                        {{ form.password1(placeholder="登录密码") }}
+                        {% for message in form.password1.errors %}
+                            <small>{{ message }}</small>
+                        {% endfor %}
+                    </div>
+
+                    <div class="formRow">
+                        {{ form.password2(placeholder="再次输入登录密码") }}
+                    </div>
+
+
+                    <div class="formRow">
+
+                        {{ form.submit }}
+                    </div>
+                </form>
+            </div>
+        </section>
+    </header>
+    '
+</header>
+<script src="../../static/c_assets/js/menu.js"></script>
+<script src="../../static/lib/jquery-2.1.4.js"></script>
+<script src="../../static/lib/fastclick.js"></script>
+<script src="../../static/js/jquery-weui.js"></script>
+
+
+{% if error_msg %}
+    <script>
+        $(function () {
+            $.alert("{{ error_msg }}", "警告")
+        });
+    </script>
+
+{% endif %}
+
+{% if success == 1 %}
+    <script>
+        $(function () {
+            $.alert("注册成功", "提示",
+                function () {
+                    window.location.href = '/';
+                }
+            )
+        });
+    </script>
+{% endif %}
+
+
+<script>
+    $(function () {
+        FastClick.attach(document.body);
+    });
+</script>
+
+<script>
+    //      $("#showTooltips").click(function() {
+    //        var tel = $('#phone').val();
+    //        var code = $('#code').val();
+    //        if(!tel || !/^1[3|4|5|7|8]\d{9}$/.test(tel)) $.toptip('请输入手机号');
+    //        else if(!code || !/^\d{6}$/.test(code)) $.toptip('请输入六位手机验证码');
+    //        else $.toptip('提交成功', 'success');
+    //      });
+    function check_data() {
+        var tel = $('#phone').val();
+        var code = $('#code').val();
+        var password = $('#password').val();
+        var confirm = $('#confirm').val();
+
+        if (!tel || !/^1[3|4|5|7|8]\d{9}$/.test(tel)) $.toptip('请输入手机号');
+        else if (!code || !/^\d{6}$/.test(code)) $.toptip('请输入六位手机验证码');
+        else if (backcode) {
+            $.toptip(backcode);
+        } else if (!password || !/^[a-zA-Z\d_]{6,12}$/.test(password)) $.toptip('请正确设置密码');
+        else if (confirm != password) {
+            $.toptip('密码不一致');
+        } else if ($("input[type='checkbox']").is(':checked') == false) {
+            $.toptip('请阅读相关条款');
+        } else {
+            document.getElementById('my-form').submit();
+        }
+        var backcode = {{ error_msg }};
+        {#            if(backcode){#}
+        {#                $.toptip(backcode);#}
+        {#                $(function() {#}
+        {#                    $.alert("{{ backcode }}", "警告")#}
+        {#                });#}
+        {#            }#}
+
+    }
+</script>
+
+<!--peak's script-->
+<script type="text/javascript">
+    var cur_count;
+    var count = 60; // 重复发送验证码的周期(s)
+    var InterValObj;
+    var phone_number;
+
+    function send_message() {
+        // 获取用户输入的手机号码
+        // 如果手机号码为空则弹窗提醒
+        // 否则使用 ajax 将号码提交给后台，并且开始倒计时
+        phone_number = document.getElementById("phone").value
+
+
+        if (!phone_number || !/1[3|4|5|7|8]\d{9}/.test(phone_number)) {
+            alert('请输入正确的手机号码!')
+        } else if (phone_number) {
+            cur_count = count;
+
+            // 设置按钮属性，使按钮不能响应点击事件
+            document.getElementById("getCode").setAttribute("disabled", "true");
+            document.getElementById("getCode").value = "     " + cur_count + "s";
+
+            // HTML DOM setInterval() 方法可以按照指定的周期（毫秒单位）来调用函数或计算表达式
+            // 这里我们以 1000 毫秒为周期重复调用 set_remain_time() 函数实现倒计时
+            InterValObj = window.setInterval(set_remain_time, 300);
+
+            // 发送请求
+            loadXMLDoc();
+        }
+
+
+    }
+
+    function set_remain_time() {
+        {#            var backcode = {{ error_msg|tojson }};#}
+        {#            if(backcode)#}
+        {#            {#}
+        {#                {$.toptip(backcode);}#}
+        {#            }#}
+        if (cur_count == 0) {
+            // 将 InterValObj 传递给 clearInterval， 从而取消对 set_remian_time() 的重复调用
+            window.clearInterval(InterValObj);
+
+            // 恢复按钮响应点击事件
+            document.getElementById("getCode").removeAttribute("disabled");
+            document.getElementById("getCode").value = "获取验证码";
+        } else {
+            cur_count--;
+            document.getElementById("getCode").value = "   " + cur_count + "s";
+        }
+    }
+
+    function loadXMLDoc() {
+        var xmlhttp = new XMLHttpRequest();
+
+        xmlhttp.open("GET", "register?mobile_phone_number=" + phone_number, true);
+        xmlhttp.send();
+
+
+    }
+</script>
+
+</body>
+
+</html>
+</section>
+
+
+<script src="../../static/c_assets/js/menu.js"></script>
+
+
+</body>
+
+</html>

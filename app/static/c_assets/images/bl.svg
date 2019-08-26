@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="100">
+
+
+	<g fill="rgba(139,239,58,0.3)" transform="translate(-903.868 0)">
+        <path d="M 0 70 Q 135 36, 270 70 T 540 70 T 810 70 T 1080 70 T 1350 70 T 1620 70 T 1890 70 T 2160 70 T 2430 70 T 2700 70 V 100 H 0 V 0" transform="translate(-38.232284367796474, 0)"></path>
+        <animateTransform attributeName="transform" attributeType="XML" type="translate" from="0" to="-540" dur="8s" repeatCount="indefinite"></animateTransform>
+    </g>
+	
+	<g fill="rgba(139,239,58,0.2)">
+        <path d="M 0 70 Q 87.5 47, 175 70 T 350 70 T 525 70 T 700 70 T 875 70 T 1050 70 T 1225 70 T 1400 70 T 1575 70 T 1750 70 T 1925 70 T 2100 70 T 2275 70 T 2450 70 V 100 H 0 V 0"></path>
+        <animateTransform attributeName="transform" attributeType="XML" type="translate" from="0" to="-350" dur="10s" repeatCount="indefinite"></animateTransform>
+    </g>
+	
+	
+    <g fill="rgba(139,239,58,0.1)">
+        <path d="M 0 70 Q 75 39, 150 70 T 300 70 T 450 70 T 600 70 T 750 70 T 900 70 T 1050 70 T 1200 70 T 1350 70 T 1500 70 T 1650 70 T 1800 70 T 1950 70 T 2100 70 T 2250 70 T 2400 70 V 100 H 0 V 0"></path>
+        <animateTransform attributeName="transform" attributeType="XML" type="translate" from="0" to="-300" dur="15s" repeatCount="indefinite"></animateTransform>
+    </g>
+    
+</svg> 

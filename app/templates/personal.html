@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{{ today }} 打印订单
+<br>
+当前登录用户：{{ current_user.Tel_Number }}
+<br>
+{% if current_user.Role == 'guest' %}
+<form action="{{ url_for('printer.query') }}" method="get">
+    {{ query_form.hidden_tag() }}
+{#    {{ query_form.tel_number.label }}#}
+{#    {{ query_form.tel_number }}#}
+{#    <br>#}
+    {{ query_form.date_time.label }}
+    {{ query_form.date_time(type="date") }}
+    <br>
+    {{ query_form.submit }}
+</form>
+{% endif %}
+<br>
+<table>
+    <thead>
+    <tr>
+        <th>文件名</th>
+        <th>份数</th>
+        <th>方向</th>
+        <th>单彩</th>
+        <th>方式</th>
+        <th>状态</th>
+        <th>订单号</th>
+{#        <th>预览</th>#}
+    </tr>
+    </thead>
+    <tbody>
+    {% for info in infos %}
+        {% if info.Born_Date_Day == today %}
+            <tr>
+                <td style="text-align: center">{{ info.File_Name }}</td>
+                <td style="text-align: center">{{ info.Print_Copies }}</td>
+                <td style="text-align: center">{{ info.Print_Direction }}</td>
+                <td style="text-align: center">{{ info.Print_Colour }}</td>
+                <td style="text-align: center">{{ info.Print_way }}</td>
+                <td style="text-align: center">{{ info.Print_Status }}</td>
+                <td style="text-align: center">{{ info.Trade_Number }}</td>
+            </tr>
+        {% endif %}
+
+    {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>

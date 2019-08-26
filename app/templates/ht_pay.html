@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<img src="../../static/pay_qrcode/{{ i }}">
+
+
+<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+<script type="text/javascript">
+    var vxpay = window.setInterval(quert_status, '3000');
+
+    function quert_status() {
+        $.ajax({
+            url: 'https://xorpay.com/api/query/{{ aoid }}',
+            dataType: 'jsonp',
+            type: 'get',
+            data: {},
+            success: function (sta) {
+                console.log(sta.status);
+                if (sta.status == "success") {
+                    window.clearInterval(vxpay);
+                    window.location.href = "/printer/select";
+                }
+            }
+        })
+    }
+</script>
+</body>
+</html>

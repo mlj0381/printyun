@@ -1,0 +1,873 @@
+@charset "utf-8";
+
+/* CSS Document */
+
+* {
+    box-sizing: border-box;
+    border: none;
+    outline: none
+}
+
+html,
+body {
+    height: 100%;
+}
+
+table,
+td {
+    border: 1px solid #ccc;
+}
+
+html,
+html body {
+    height: 100%
+}
+
+body {
+    background: #f1f1f1;
+    margin: 0;
+    font-family: '微软雅黑', 'Arial';
+}
+
+img {
+    border: none
+}
+
+a {
+    text-decoration: none;
+    color: #FFF;
+}
+
+header {
+    background: #2db612;
+    color: rgb(10, 2, 2);
+    min-width: 1200px
+}
+
+.menu {
+    display: none
+}
+
+#menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 10000;
+    padding: 60px;
+    font-size: 16px
+}
+
+#menu a {
+    display: block;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    margin: 0 auto;
+    border-bottom: 1px dotted #333
+}
+
+.closeMenu {
+    font-size: 30px;
+    color: #FFF;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 3px solid #FFF;
+    width: 30px;
+    height: 30px !important;
+    line-height: 20px !important;
+    overflow: hidden;
+    float: right;
+    margin: 10px 0
+}
+
+.icon_reg {
+    background: url("../images/icon/icon_reg.png") 20px center no-repeat;
+    padding-left: 50px !important;
+    background-size: 26px
+}
+
+.icon_login {
+    background: url("../images/icon/icon_login.png") 20px center no-repeat;
+    padding-left: 50px !important;
+    background-size: 26px
+}
+
+.icon_logout {
+    background: url("../images/icon/icon_logout.png") 20px center no-repeat;
+    padding-left: 50px !important;
+    background-size: 26px
+}
+
+.icon_down {
+    background: url("../images/icon/icon_download.png") 20px center no-repeat;
+    padding-left: 50px !important;
+    background-size: 22px
+}
+
+.icon_fast {
+    background: url("../images/icon/icon_fast.png") center top no-repeat;
+    background-size: 115px;
+    width: 115px;
+    height: 115px
+}
+
+.icon_stable {
+    background: url("../images/icon/icon_stable.png") center top no-repeat;
+    background-size: 115px;
+    width: 115px;
+    height: 115px
+}
+
+.icon_cost {
+    background: url("../images/icon/icon_cost.png") center top no-repeat;
+    background-size: 115px;
+    width: 115px;
+    height: 115px
+}
+
+.icon_safe {
+    background: url("../images/icon/icon_safe.png") center top no-repeat;
+    background-size: 115px;
+    width: 115px;
+    height: 115px
+}
+
+.icon_office {
+    background: url("../images/icon/icon_office.png") center no-repeat;
+    background-size: 65px;
+    width: 65px;
+    height: 65px
+}
+
+.icon_home {
+    background: url("../images/icon/icon_home.png") center no-repeat;
+    background-size: 65px;
+    width: 65px;
+    height: 65px
+}
+
+.icon_order {
+    background: url("../images/icon/icon_order.png") center no-repeat;
+    background-size: 65px;
+    width: 65px;
+    height: 65px
+}
+
+.icon_buess {
+    background: url("../images/icon/icon_buess.png") center no-repeat;
+    background-size: 65px;
+    width: 65px;
+    height: 65px
+}
+
+.icon_photo {
+    background: url("../images/icon/icon_photo.png") center no-repeat;
+    background-size: 65px;
+    width: 65px;
+    height: 65px
+}
+
+.w1200 {
+    width: 1200px;
+    margin: 0 auto
+}
+
+.Top {
+    height: 70px;
+    border-bottom: 1px solid #59cc0c;
+}
+
+.logo {
+    font-size: 60px
+}
+
+.Top>.w1200 {
+    display: flex;
+    justify-content: space-between;
+    line-height: 70px;
+}
+
+.Top>.w1200>nav {
+    flex: 1;
+    text-align: right;
+    padding: 0 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.Top>.w1200>nav a {
+    margin: 0 20px;
+    min-width: 12%;
+    text-align: center;
+}
+
+.Top>.w1200>nav a:hover span::after {
+    content: " ";
+    display: block;
+    height: 4px;
+    margin-top: -4px;
+    background-color: #f4fc11;
+    animation: nav_in 0.3s ease-in-out
+}
+
+.Top .userBtn {}
+
+.Top .userBtn a {
+    display: block;
+    float: left;
+    padding: 0 20px 0 20px;
+    background-color: #4ec70e;
+}
+
+.Top .userBtn a:hover {
+    background-color: #57cd17;
+}
+
+.Top .userBtn a:nth-child(1) {
+    border-right: 1px solid #59cc0c
+}
+
+.tran {
+    height: 534px;
+    width: 1200px;
+    overflow: hidden
+}
+
+.tranTab {
+    width: 1200px;
+    height: 534px;
+    overflow: hidden;
+    position: relative
+}
+
+.tranText {
+    position: absolute;
+    left: 50px;
+    top: 60px
+}
+
+.tranText h2 {
+    font-size: 40px;
+    font-weight: normal;
+    margin: 0;
+}
+
+.tranText div span {
+    margin: 10px 32px 0 0;
+}
+
+.tranText>p {
+    font-size: 24px;
+    line-height: 200%;
+    margin: 50px 0
+}
+
+.tranText .downloadBtn {
+    display: block;
+    width: 280px;
+    height: 57px;
+    line-height: 50px;
+    border: 2px solid #FFF;
+    border-radius: 5px
+}
+
+.tranText .downloadBtn:hover {
+    background-color: rgba(255, 255, 255, 0.2)
+}
+
+.tranPics {
+    position: absolute;
+    right: 50px;
+    top: 60px;
+    width: 440px;
+    height: 100%
+}
+
+.tranPics img {
+    position: absolute;
+}
+
+.sectionTitle {
+    width: 100%;
+    text-align: center;
+    font-size: 35px;
+    font-weight: normal;
+    margin: 20px auto;
+    padding: 20px 0
+}
+
+.sectionTitle span {
+    display: block;
+    color: #a5a5a5;
+    font-size: 20px;
+    padding-top: 10px
+}
+
+.featuresItem {
+    display: flex;
+    flex-flow: wrap;
+    cursor: pointer;
+    line-height: 180%
+}
+
+.features .sectionTitle {
+    background: url("../images/sectionTitleLine.png") center bottom no-repeat;
+    background-size: 1200px;
+}
+
+.featuresItem>div {
+    flex: 1 1 40%;
+    background-color: #FFF;
+    margin: 10px;
+    padding: 30px;
+}
+
+.featuresItem>div>div {
+    width: 115px;
+    height: 115px;
+    border: 2px solid #2ab70e;
+    border-radius: 50%;
+    float: left;
+    margin-right: 20px
+}
+
+.featuresItem h3 {
+    margin: 0px;
+    font-weight: normal;
+    padding-left: 135px
+}
+
+.featuresItem p {
+    color: #7f7f7f;
+    padding-left: 135px
+}
+
+.featuresItem>div:hover>div {
+    animation: features_icon 0.3s ease-out forwards;
+    background-color: #2ab70e
+}
+
+.appcase {
+    background-color: #2ab70e;
+    margin-top: 50px
+}
+
+.appcase .sectionTitle,
+.appcase .sectionTitle span {
+    color: #FFF !important;
+}
+
+.appItem {
+    background-color: #FFF;
+    top: 120px;
+    margin: 0 10px;
+    display: flex;
+    padding: 20px 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+    top: 30px
+}
+
+.appItem>div {
+    text-align: center;
+    min-width: 230px;
+    position: relative
+}
+
+.appItem>div>div {
+    margin: auto;
+}
+
+.appItem>div>h3 {
+    font-size: 16px
+}
+
+.appItem>div>p {
+    font-size: 14px
+}
+
+.appItem>div:hover {
+    animation: appIcon 1s ease-in-out infinite;
+}
+
+.stand {
+    background: url("../images/standbg.png") no-repeat;
+    background-size: cover;
+    margin-top: 100px;
+    color: #FFF;
+    margin-bottom: 100px;
+}
+
+.standAni {
+    font-size: 30px;
+}
+
+.standards {
+    display: flex;
+    width: 1180px;
+    margin: 0 10px;
+    margin-top: 30px;
+    position: relative;
+    top: 30px
+}
+
+.standards>div {
+    flex: 1 1 33.3%;
+    text-align: center;
+    padding: 40px;
+    transition: margin 0.3s ease-in-out
+}
+
+.standards>div:hover {
+    margin-top: -30px;
+}
+
+.standards>div:nth-child(1) {
+    background-color: #009cff;
+}
+
+.standards>div:nth-child(2) {
+    background-color: #2cb511
+}
+
+.standards>div:nth-child(3) {
+    background-color: #f19f10
+}
+
+.standards h3 {
+    font-size: 20px;
+    margin: 10px 0
+}
+
+.standards h3 span {
+    font-weight: normal;
+    font-size: 16px
+}
+
+.standards p {
+    font-size: 25px;
+    margin: 0
+}
+
+.standAni {
+    position: relative;
+    height: 180px;
+    overflow: hidden
+}
+
+.standAni p {
+    position: absolute;
+    white-space: nowrap
+}
+
+.standAni p:nth-child(1) {
+    animation: stand 10s linear alternate infinite;
+    margin-top: 0
+}
+
+.standAni p:nth-child(2) {
+    animation: stand 12s linear alternate infinite;
+    margin-top: 60px
+}
+
+.standAni p:nth-child(3) {
+    animation: stand 14s linear alternate infinite;
+    margin-top: 120px
+}
+
+footer {
+    background-color: #000;
+    color: #FFF;
+    padding: 14px 0
+}
+
+.copyright {
+    font-size: 14px;
+    text-align: center
+}
+
+.loginPage,
+.Page {
+    display: flex;
+    flex-direction: column;
+    background-color: #3bbc19;
+}
+
+.loginPage {}
+
+.login_box {
+    flex: 1 1 100%;
+}
+
+.login_box,
+.box {
+    position: relative;
+    background-size: cover;
+    background-image: url("");
+    background-repeat: no-repeat;
+}
+
+.login_bg {
+    position: absolute;
+    width: 100%;
+    height: 100%
+}
+
+.login_bg div {
+    position: absolute;
+    width: 100%;
+    height: 100%
+}
+
+.login_bg1 {
+    background-image: url("../images/loginBg1.png");
+    background-size: cover
+}
+
+.login_bg2 {
+    background-image: url("../images/loginBg2.png");
+    background-size: cover
+}
+
+.login_bg3 {
+    background-image: url("../images/loginBg3.png");
+    background-size: cover
+}
+
+.login_bg4 {
+    background-image: url("../images/loginBg4.png");
+    background-size: cover
+}
+
+.login_bg5 {
+    background-image: url("../images/loginBg5.png");
+    background-size: cover
+}
+
+.login_bg6 {
+    background-image: url("../images/loginBg6.png");
+    background-size: cover
+}
+
+.bl {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url("../images/bl.svg") center no-repeat;
+}
+
+.helpContent {
+    margin: 0 50px !important;
+    line-height: 200%;
+    min-height: 500px;
+    font-size: 16px
+}
+
+.helpContent p {
+    text-indent: 28px;
+}
+
+.loginformBox {
+    width: 450px;
+    height: 470px;
+    background: #76db26 url("../images/logo.png") center 20px no-repeat;
+    background-size: 333px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -235px 0 0 -225px;
+    border-radius: 3px;
+    z-index: 1000;
+    opacity: 0.9;
+    overflow: hidden;
+}
+
+.loginformBox form {
+    background: #FFF;
+    height: 100%;
+    display: block;
+    margin-top: 120px;
+    padding: 30px
+}
+
+.formRow {
+    margin: 15px auto;
+}
+
+.formRow input[type="text"],
+.formRow input[type="password"],
+.formRow input[type="submit"] {
+    width: 100%;
+    height: 36px;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    padding: 4px 15px;
+    font-size: 16px
+}
+
+.formRow img {
+    vertical-align: middle
+}
+
+.formRow input[type="submit"] {
+    background: #76db26;
+    border: none;
+    color: #FFF
+}
+
+.formRow input[type="submit"]:hover {
+    background: #6fd220
+}
+
+.formRow .left {
+    float: left;
+}
+
+.formRow .right {
+    float: right;
+}
+
+.loginformBox a {
+    color: #666
+}
+
+.loginformBox a:hover {
+    color: #333
+}
+
+.formRow input[type="checkbox"] {
+    display: none
+}
+
+.formRow input[type="checkbox"]+label {
+    background-color: #fafbfa;
+    border-radius: 50px;
+    display: inline-block;
+    position: relative;
+    top: 5px;
+    -webkit-transition: all 0.1s ease-in;
+    transition: all 0.1s ease-in;
+    width: 40px;
+    height: 20px;
+}
+
+.formRow input[type="checkbox"]+label:after {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    -webkit-transition: box-shadow 0.1s ease-in;
+    transition: box-shadow 0.1s ease-in;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 100px;
+    box-shadow: inset 0 0 0 0 #eee, 0 0 1px rgba(0, 0, 0, 0.4);
+}
+
+input[type="checkbox"]+label:before {
+    content: ' ';
+    position: absolute;
+    background: white;
+    top: 1px;
+    left: 1px;
+    z-index: 999999;
+    width: 18px;
+    -webkit-transition: all 0.1s ease-in;
+    transition: all 0.1s ease-in;
+    height: 18px;
+    border-radius: 20px;
+    box-shadow: 0 3px 1px rgba(0, 0, 0, 0.05), 0 0px 1px rgba(0, 0, 0, 0.3);
+}
+
+input[type="checkbox"]:active+label:after {
+    box-shadow: inset 0 0 0 20px #eee, 0 0 1px #eee;
+}
+
+input[type="checkbox"]:active+label:before {
+    width: 19px;
+}
+
+input[type="checkbox"]:checked:active+label:before {
+    width: 19px;
+    left: 20px;
+}
+
+input[type="checkbox"]+label:active {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+input[type="checkbox"]:checked+label:before {
+    content: ' ';
+    position: absolute;
+    left: 22px;
+    border-radius: 100px;
+}
+
+input[type="checkbox"]:checked+label:after {
+    content: ' ';
+    font-size: 1.5em;
+    position: absolute;
+    background: #43c016;
+    box-shadow: 0 0 1px #4cda60;
+}
+
+.box {
+    padding: 20px
+}
+
+.box .w1200 {
+    background: rgba(255, 255, 255, 1);
+    height: 100%;
+    border-radius: 4px
+}
+
+.box form {
+    padding: 20px 0;
+    margin: auto
+}
+
+.reg form {
+    max-width: 400px
+}
+
+.box .formRow {
+    margin: 30px auto
+}
+
+.box label {
+    color: #999;
+    font-size: 14px
+}
+
+.box a {
+    color: #31b714
+}
+
+@keyframes nav_in {
+    0% {
+        width: 0%;
+        opacity: 0
+    }
+    100% {
+        width: 100%;
+        opacity: 1
+    }
+}
+
+@keyframes features_icon {
+    0% {
+        background-position: center top
+    }
+    100% {
+        background-position: center bottom
+    }
+}
+
+@keyframes appIcon {
+    0% {
+        top: 0;
+    }
+    50% {
+        top: 15px;
+    }
+    100% {
+        top: 0px;
+    }
+}
+
+@keyframes stand {
+    0% {
+        margin-left: 1200px;
+        opacity: 0
+    }
+    45% {
+        opacity: 0.8
+    }
+    50% {
+        opacity: 1
+    }
+    65% {
+        opacity: 0.8
+    }
+    100% {
+        margin-left: 0px;
+        opacity: 0
+    }
+}
+
+@media all and (max-width:800px) {
+    header {
+        min-width: inherit
+    }
+    .menu {
+        display: block;
+        width: 50px;
+        height: 50px;
+        margin-top: 8px;
+        cursor: pointer;
+    }
+    .menu {
+        background: url("../images/icon/menu.png") center no-repeat;
+        background-size: 30px;
+    }
+    .Top>.w1200>nav {
+        display: none
+    }
+    .Top>.w1200>.userBtn {
+        display: none
+    }
+    .tran {
+        height: auto;
+        padding: 20px 10px !important
+    }
+    .w1200 {
+        width: auto;
+        padding: 0 10px
+    }
+    .tranTab {
+        width: auto;
+        height: auto
+    }
+    .tranText {
+        position: static;
+        text-align: center;
+    }
+    .tranText h2 {
+        font-size: 8vw !important
+    }
+    .tranText p {
+        font-size: 3.8vw !important
+    }
+    .tranText div {
+        font-size: 4vw !important
+    }
+    .tranText div span {
+        margin: 10px 16px 0 16px;
+    }
+    .tranPics {
+        display: none
+    }
+    .tranText .downloadBtn {
+        display: block;
+        margin: 0 auto
+    }
+    .featuresItem {
+        display: block
+    }
+    .appcase {}
+    .appItem {}
+    .appItem>div {}
+    .standards {
+        position: static;
+        display: block;
+        width: auto
+    }
+    .stand {
+        margin-bottom: 0
+    }
+}

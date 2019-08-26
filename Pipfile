@@ -1,0 +1,26 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+flask = "*"
+flask-bootstrap = "*"
+flask-login = "*"
+flask-sqlalchemy = "*"
+flask-wtf = "*"
+pymysql = "*"
+python-alipay-sdk = "*"
+pypdf2 = "*"
+redis = "*"
+filetype = "*"
+requests = "*"
+rq = "*"
+aliyun-python-sdk-core-v3 = "==2.9.4"
+qrcode = "*"
+pillow = "*"
+
+[requires]
+python_version = "3.7"

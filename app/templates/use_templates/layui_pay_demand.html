@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Pay</title>
+
+
+    <link rel="stylesheet" type="text/css" href="../../static/layui/css/layui.css"/>
+    <script type="text/javascript" src="../../static/layui/jquery-1.9.1.min.js"></script>
+
+</head>
+
+<body style="margin-left:5%; padding:1%;">
+<br>
+
+<div style="width: 90%">
+    <fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+        <legend>订单详情</legend>
+    </fieldset>
+
+    <table class="layui-table" lay-skin="line">
+        <colgroup>
+            <col width="150">
+            <col width="150">
+
+        </colgroup>
+        <thead>
+
+        <tr>
+            <th>订单号</th>
+            <th>{{ data["tradeid"] }}</th>
+            <input id="tradeid" value="{{ data["tradeid"] }}" type="hidden">
+        </tr>
+
+        </thead>
+        <tbody>
+
+        <tr>
+            <td>用户账号</td>
+            <td>{{ data["user_tel"] }}</td>
+        </tr>
+
+        <tr>
+            <td>文件名称</td>
+            <td>
+                {{ data["printfile"] }}
+            </td>
+        </tr>
+
+        <tr>
+            <td>订单时间</td>
+            <td>{{ data['now'] }}</td>
+        </tr>
+
+        <tr>
+            <td>打印份数</td>
+            <td><b>{{ data["print_copies"] }}</b></td>
+        </tr>
+
+        <tr>
+            <td>打印点</td>
+            <td><b>{{ data["print_place"] }}</b></td>
+        </tr>
+
+        <td>&nbsp;</td>
+        <td align="center">
+            <div class="layui-btn-group">
+
+                <div class="site-demo-button" id="layerDemo" style="margin-bottom: 0; width: 216px; margin: 0; white-space:nowrap;">
+                    <p class="layui-text">注:您的订单已提交，请到您指定的地点进项排版打印</p>
+                </div>
+
+            </div>
+        </td>
+
+
+        </tbody>
+    </table>
+</div>
+
+
+
+</body>
+</html>

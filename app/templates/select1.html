@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--<form action="{{url_for('login.register')}}" method="post" enctype='multipart/form-data'>-->
+<form method="post" enctype='multipart/form-data'>
+    {{ form.hidden_tag() }}
+    {{ form.print_file.label }}
+    {{ form.print_file }}
+    {% for message in form.print_file.errors %}
+        <small>{{ message }}</small>
+    {% endfor %}
+    <br>
+    {{ form.submit }}
+</form>
+</body>
+</html>

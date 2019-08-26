@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>确认订单</title>
+</head>
+<body>
+<div>
+    付款金额：{{ data["cost"] }}<br>
+    文件：{{ data["printfile"] }}<br>
+    打印点：{{ data["print_place"] }}<br>
+    文件页数：{{ data["pageCount"] }}<br>
+    打印份数：{{ data["print_copies"] }}
+</div>
+
+<div>
+    <form method="post" action="/to_pay/pay">
+        <input type="hidden" name="filename" value="{{ data["printfile"] }}">
+{#        <input type="hidden" name="place" value="{{ data["print_place"] }}">#}
+{#        <input type="hidden" name="new_filename" value="{{ data["new_filename"] }}">#}
+{#        <input type="hidden" name="copies" value="{{ data["print_copies"] }}">#}
+{#        <input type="hidden" name="direction" value="{{ data["print_type"] }}">#}
+{#        <input type="hidden" name="color" value="{{ data["print_color"] }}">#}
+{#        <input type="hidden" name="paper_size" value="{{ data["print_size"] }}">#}
+{#        <input type="hidden" name="print_way" value="{{ data["print_way"] }}">#}
+{#        <input type="hidden" name="time_way" value="{{ data["print_time"] }}">#}
+        <input type="hidden" name="pay_type" value="alipay">
+        <input type="hidden" name="cost" value="{{ data["cost"] }}">
+        <input type="hidden" name="tradeid" value="{{ data["tradeid"] }}">
+        <input type="hidden" name="user_tel" value="{{ data["user_tel"] }}">
+        <input type="submit" value="支付宝付款">
+    </form>
+    <form method="post" action="/to_pay/pay">
+        <input type="hidden" name="filename" value="{{ data["printfile"] }}">
+{#        <input type="hidden" name="place" value="{{ data["print_place"] }}">#}
+{#        <input type="hidden" name="new_filename" value="{{ data["new_filename"] }}">#}
+{#        <input type="hidden" name="copies" value="{{ data["print_copies"] }}">#}
+{#        <input type="hidden" name="direction" value="{{ data["print_type"] }}">#}
+{#        <input type="hidden" name="color" value="{{ data["print_color"] }}">#}
+{#        <input type="hidden" name="paper_size" value="{{ data["print_size"] }}">#}
+{#        <input type="hidden" name="print_way" value="{{ data["print_way"] }}">#}
+{#        <input type="hidden" name="time_way" value="{{ data["print_time"] }}">#}
+        <input type="hidden" name="pay_type" value="native">
+        <input type="hidden" name="cost" value="{{ data["cost"] }}">
+        <input type="hidden" name="tradeid" value="{{ data["tradeid"] }}">
+        <input type="hidden" name="user_tel" value="{{ data["user_tel"] }}">
+        <input id="to_pay" type="submit" value="微信付款">
+    </form>
+</div>
+
+{#<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>#}
+{#<script type="text/javascript">#}
+{#    $(function(){#}
+{#        $('#to_pay').click(function () {#}
+{#            $.ajax({#}
+{#                url: 'https://xorpay.com/api/pay/xxxx',#}
+{#                dataType : $('input#pay_type').val(),#}
+{#                type : "post",#}
+{#                data: {#}
+{#                    'name': ,#}
+{#                    'pay_type': ,#}
+{#                    'price': ,#}
+{#                    'order_id': ,#}
+{#                    'order_uid': ,#}
+{#                    'notify_url': 'http://127.0.0.1:5000/',#}
+{#                }#}
+{#            })#}
+{#        })#}
+{#    })#}
+{#</script>#}
+
+
+</body>
+</html>
